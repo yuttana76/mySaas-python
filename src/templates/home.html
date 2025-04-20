@@ -10,8 +10,8 @@
     <p>This is the home page of our website.</p>
     {% include "snippets/welcome-user-msg.html" %}
 
-    {% comment %} {{ query_set|length }} items found. {% endcomment %}
     <p>Page visit count: {{ page_visit_count }}</p>
     <p>Total: {{ total_page_visit_count }}</p>
+    <p>Percent: {{ percent }} %</p>
     
 {% endblock content %}
