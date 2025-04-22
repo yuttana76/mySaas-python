@@ -49,3 +49,31 @@ cd src
 
 python manage.py migrate
 ```
+
+### flowbite CDN
+https://flowbite.com/docs/getting-started/quickstart/#include-using-cdn
+
+
+
+### static files
+Config in setting 
+
+Don't save static files in git
+.gitignor
+
+```
+python manage.py collectstatic 
+
+```
+
+### Custom python manange.py
+```
+python manage.py startapp commando
+```
+Create custom function in
+commando/commands/hello_world.py
+
+Run custom function 
+```
+python manage.py hello_world
+```
