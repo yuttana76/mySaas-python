@@ -77,3 +77,9 @@ Run custom function
 ```
 python manage.py hello_world
 ```
+
+For download static files
+```
+python manage.py vendor_pull
+python manage.py collectstatic
+```

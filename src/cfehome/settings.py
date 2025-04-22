@@ -29,9 +29,6 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 # DEBUG = str(os.environ.get("DJANGO_DEBUG", "False")).lower() == "true"
 DEBUG = config("DJANGO_DEBUG",cast=bool)
 
-print("DEBUG", DEBUG)
-print("Raw DJANGO_DEBUG:", config("DJANGO_DEBUG"))
-
 ALLOWED_HOSTS = [
     ".railway.app", # https://saas.prod.railway.app
 ]
@@ -59,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -173,6 +171,13 @@ STATICFILES_DIRS = [
 # output for python manage.py collectstatic 
 # local cdn
 STATIC_ROOT = BASE_DIR.parent / "local-cdn"
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
  
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
