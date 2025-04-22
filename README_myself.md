@@ -24,3 +24,28 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+
+### set local environment
+```
+export DJANGO_DEBUG="False"
+```
+
+### Secret Key for Django [blog pos
+https://www.codingforentrepreneurs.com/blog/create-a-one-off-django-secret-key
+
+```
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+
+OR
+```
+openssl rand -base64 32
+```
+
+### Config db
+after config db run command
+```
+cd src
+
+python manage.py migrate
+```

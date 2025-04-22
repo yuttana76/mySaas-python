@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+# import os
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-kfu)n_3z1y9qqx2fj60#w264yb45dwoc!qd@$9y1(5c*9&3on)"
+SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = str(os.environ.get("DJANGO_DEBUG", "False")).lower() == "true"
+DEBUG = config("DJANGO_DEBUG",cast=bool)
+
+print("DEBUG", DEBUG)
+print("Raw DJANGO_DEBUG:", config("DJANGO_DEBUG"))
 
 ALLOWED_HOSTS = [
     ".railway.app", # https://saas.prod.railway.app
@@ -82,10 +89,38 @@ WSGI_APPLICATION = "cfehome.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=300)
+
+# For database online 
+# DATABASE_URL = config("DATABASE_URL", default=None)
+# if DATABASE_URL is not None:
+#     import dj_database_url
+#     DATABASES = {
+#         "default": dj_database_url.config(
+#             default=DATABASE_URL,
+#             conn_max_age=CONN_MAX_AGE,
+#             conn_health_checks=True,
+#         )
+#     }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": config("DB_ENGINE",cast=str),
+        "NAME": config("DB_DATABASE_NAME",cast=str),
+        "USER": config("DB_USER",cast=str),
+        "PASSWORD": config("DB_PASSWORD",cast=str),
+        "HOST": config("DB_HOST",cast=str),
+        "PORT": config("DB_PORT",cast=int),
+        # 'OPTIONS': {
+        #     "sslmode": "require",
+        # },
     }
 }
 
