@@ -116,3 +116,13 @@ python manage.py shell
 ```
 python manage.py startapp auth
 ```
+
+### allauth.org
+https://docs.allauth.org/en/latest/installation/quickstart.html
+Do config and run migrate 
+```
+python manage.py migrate
+```
+
+### allauth config is important
+https://docs.allauth.org/en/latest/account/configuration.html
