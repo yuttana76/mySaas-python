@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from visits.models import PageVisit
 
 def home_view(request,* args, **kwargs):
-
+    print(request.user.is_authenticated,request.user)
     return about_view(request,*args,**kwargs)
 
 def about_view(request,* args, **kwargs):

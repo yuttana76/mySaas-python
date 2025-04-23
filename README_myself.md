@@ -1,3 +1,14 @@
+
+Python Tutorial: Build a SaaS App with Django, Stripe, Neon PostgreSQL, TailwindCSS, GitHub Actions
+youtube
+https://www.youtube.com/watch?v=WbNNESIxJnY&t=371s
+
+Code
+https://github.com/codingforentrepreneurs/SaaS-Foundations/blob/main/src/cfehome/settings.py
+
+### Should try
+django-storages
+
 ### Create project call visits
 ``` bash
 django-admin startapp visits
@@ -82,4 +93,26 @@ For download static files
 ```
 python manage.py vendor_pull
 python manage.py collectstatic
+```
+
+### Sending Emails with Gmail
+```
+python manage.py sendtestemail --admin
+```
+
+### Creat supersuer / admin user
+```
+python manage.py createsuperuser
+```
+devone
+passdev
+
+Advance tool
+```
+python manage.py shell
+```
+
+### Create Auth app for login & registration
+```
+python manage.py startapp auth
 ```
