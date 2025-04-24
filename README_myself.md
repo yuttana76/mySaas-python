@@ -140,3 +140,18 @@ https://github.com/danihodovic/django-allauth-ui
 
 ### Customize allauth-ui reference this link
 https://github.com/danihodovic/django-allauth-ui?tab=readme-ov-file#hacking-on-the-project
+
+### User profle
+Run command
+```
+python manage.py startapp profiles
+```
+
+Config in setting.py
+```
+INSTALLED_APPS=[
+    ...
+    "profiles",
+    ...
+]
+```
