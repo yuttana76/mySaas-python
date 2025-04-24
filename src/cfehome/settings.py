@@ -52,6 +52,7 @@ DEBUG = config("DJANGO_DEBUG",cast=bool)
 
 ALLOWED_HOSTS = [
     ".railway.app", # https://saas.prod.railway.app
+    "127.0.0.1", "localhost",
 ]
 if DEBUG:
     ALLOWED_HOSTS += [
@@ -74,9 +75,13 @@ INSTALLED_APPS = [
     "commando",
     "visits",
     # third-party-apps
+    "allauth_ui",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    "widget_tweaks",
+    "slippers",
 ]
 
 MIDDLEWARE = [
@@ -175,6 +180,8 @@ ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_EMAIL_VERIFICATION="mandatory"
 ACCOUNT_EMAIL_SUBJECT_PREFIX="[CFE] "
 
+ALLAUTH_UI_THEME = "light" # or "light"
+
 AUTHENTICATION_BACKENDS = [
     # ...
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -186,7 +193,11 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-SOCIALACCOUNT_PROVIDERS = {}
+SOCIALACCOUNT_PROVIDERS = {
+    "github": {
+        "VERIFIED_EMAIL": True,
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

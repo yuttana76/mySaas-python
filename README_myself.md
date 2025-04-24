@@ -6,6 +6,14 @@ https://www.youtube.com/watch?v=WbNNESIxJnY&t=371s
 Code
 https://github.com/codingforentrepreneurs/SaaS-Foundations/blob/main/src/cfehome/settings.py
 
+User name
+devone
+passdev
+
+
+yuttana76
+Mpam@2025
+
 ### Should try
 django-storages
 
@@ -104,8 +112,6 @@ python manage.py sendtestemail --admin
 ```
 python manage.py createsuperuser
 ```
-devone
-passdev
 
 Advance tool
 ```
@@ -123,6 +129,14 @@ Do config and run migrate
 ```
 python manage.py migrate
 ```
+test
+http://localhost:8000/accounts/login/
 
 ### allauth config is important
 https://docs.allauth.org/en/latest/account/configuration.html
+
+### New for allauth-ui reference
+https://github.com/danihodovic/django-allauth-ui
+
+### Customize allauth-ui reference this link
+https://github.com/danihodovic/django-allauth-ui?tab=readme-ov-file#hacking-on-the-project
