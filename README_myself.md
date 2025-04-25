@@ -155,3 +155,26 @@ INSTALLED_APPS=[
     ...
 ]
 ```
+
+### User permission
+python manage.py shell
+
+>from django.contrib.auth.models import Permission
+>qs = Permission.objects.all()
+>for obj in qs:
+>    print(obj.content_type.app_label,obj.codename)   #auth.view_user
+
+
+### Create app subscriptions
+
+```
+python manage.py startapp subscript
+```
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### subscription create management command
+subscriptions/management/commands
