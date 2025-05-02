@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Custom My Apps
     "commando",
+    "customers",
     "visits",
     "subscriptions",
     "profiles",

@@ -177,4 +177,62 @@ python manage.py migrate
 ```
 
 ### subscription create management command
-subscriptions/management/commands
+subscriptions/management/
+
+Run command
+```
+python manage.py sysnc_sub
+```
+
+### Stripe
+yuttana76@gmail.com
+bom41121
+
+#Dashboard
+https://dashboard.stripe.com/test/dashboard?source=unified_testing_ux
+
+#Documents
+https://docs.stripe.com/api/customers/create?lang=python
+
+#API key
+https://dashboard.stripe.com/test/apikeys
+
+### Test coding
+```
+python manage.py shell
+```
+
+>>> from helper.billing import *
+>>> STRIPE_SECRET_KEY
+>>> customer = stripe.Customer.create(
+...   name="Jenny Rosen",
+...   email="jennyrosen@example.com",
+... )
+>>> customer
+
+### Create app is customers
+```
+python manage.py startapp customers
+```
+
+
+### all auth signal
+https://docs.allauth.org/en/dev/account/signals.html
+
+
+### Stripe   Subscription Price = Stripe Price
+
+
+### Manage Price in Django Admin with Tabular Inlines
+
+>>
+1) Provide a one-off default now which will be set on all existing rows
+ 2) Quit and manually define a default value in models.py
+
+ >> Choose  1
+>> timezone.now
+
+### Priceing card
+
+CSS
+https://flowbite.com/docs/components/tables/#more-examples
