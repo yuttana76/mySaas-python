@@ -14,6 +14,12 @@ passdev
 yuttana76
 Mpam@2025
 
+### Stripe 
+4242424242424242
+04/42
+424
+
+
 ### Should try
 django-storages
 
@@ -236,3 +242,22 @@ https://docs.allauth.org/en/dev/account/signals.html
 
 CSS
 https://flowbite.com/docs/components/tables/#more-examples
+
+https://flowbite.com/docs/components/tabs/#pills-tabs
+
+
+### Stripe Checkout sesson
+```
+python manage.py startapp checkouts
+```
+
+### Cancel Dangling User Subscriptions
+>python manage.py 
+>python manage.py sync_user_subs
+>python manage.py sync_user_subs --clear-dangling
+
+### Filtering Django Models with Datetime Objects
+>import datetime
+>now = datetime.datetime.now()
+>next_week = now + datetime.timedelta(days=7)
+>

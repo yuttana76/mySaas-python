@@ -49,7 +49,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = str(os.environ.get("DJANGO_DEBUG", "False")).lower() == "true"
 DEBUG = config("DJANGO_DEBUG",cast=bool)
-
+BASE_URL = config("BASE_URL", default=None)
 ALLOWED_HOSTS = [
     ".railway.app", # https://saas.prod.railway.app
     "127.0.0.1", "localhost",
@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     "visits",
     "subscriptions",
     "profiles",
+    "checkouts",
     # third-party-apps
     "allauth_ui",
     'allauth',
