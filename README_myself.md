@@ -261,3 +261,30 @@ python manage.py startapp checkouts
 >now = datetime.datetime.now()
 >next_week = now + datetime.timedelta(days=7)
 >
+
+### Celery
+
+### GitHub Action & Environment Variables
+
+### GitHub Actions Secrets
+>python manage.py test
+
+### A Better Landing Page with Flowbite
+https://flowbite.com/blocks/
+https://flowbite.com/docs/components/tabs/#pills-tabs
+
+```
+python manage.py startapp landing
+
+```
+
+### Using the SaaS Theme to Fix Missing Tailwind Classes
+```
+python manage.py vendor_pull
+```
+
+### Dashboard View
+```
+python manage.py startapp dashboard
+
+```

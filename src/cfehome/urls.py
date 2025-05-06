@@ -20,6 +20,7 @@ from django.urls import path,include
 from auth import views as auth_views
 from subscriptions import views as subscription_views
 from checkouts import views as checkout_views 
+from landing import views as landing_views
 from .views import (
     about_view, 
     home_view, 
@@ -29,7 +30,8 @@ from .views import (
     )
 
 urlpatterns = [
-    path("", home_view ,name="home"),
+    # path("", home_view ,name="home"),
+    path("", landing_views.landing_page_view ,name="home"),
     path("login/", auth_views.login_view),
 
     path("checkout/sub-price/<int:price_id>/",checkout_views.product_price_redirect_view,  name ="sub-price-checkout"),
