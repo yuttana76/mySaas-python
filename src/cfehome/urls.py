@@ -52,4 +52,10 @@ urlpatterns = [
     path('protected/', pw_protected_view),
     path('profiles/', include('profiles.urls')),
     path("admin/", admin.site.urls),
-]
+
+    #API
+    path("api/", include("api.urls")),  #http://localhost:8000/api/
+    path("api/products/", include("products.urls")),  #http://localhost:8000/api/
+    path("api/v2/", include("cfehome.routers")),  #http://localhost:8000/api/
+    path("api/search/", include("search.urls")),  #http://localhost:8000/api/
+    ]

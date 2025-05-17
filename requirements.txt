@@ -10,3 +10,9 @@ django-allauth-ui
 django-widget-tweaks
 slippers
 stripe
+djangorestframework
+django-filter
+markdown
+djangorestframework-simplejwt
+pyyaml
+django-cors-headers
