@@ -64,8 +64,8 @@ python manage.py migrate
 django-admin startapp search
 ```
 
+http://127.0.0.1:8000/api/search/?q=x
 
-### Search Engine on Algolia
 
 ### JSON WEB Token Authentication with simplejwt
 
